@@ -4,10 +4,18 @@ public class Conta {
 	
 	private String tipo;
 	private double saldo;
-	public String numero;
-	public String titular;
-	public boolean ativa;
-	public double chequeEspecial;
+	private String numero;
+	private Cliente titular;
+	private boolean ativa;
+	private double chequeEspecial;
+	
+	public void setTitular(Cliente titular) {
+		this.titular = titular;
+	}
+	
+	public Cliente getTitular() {
+		return titular;
+	}
 	
 	public void setTipo(String tipo) {
 		
@@ -17,6 +25,34 @@ public class Conta {
 			System.out.println("Tipo inválido!");
 		}
 		
+	}
+	
+	public String getTipo() {
+		return this.tipo;
+	}
+	
+	public void setNumero(String numero) {
+		this.numero = numero;
+	}
+	
+	public String getNumero() {
+		return this.numero;
+	}
+	
+	public void setChequeEspecial(double chequeEspecial) {
+		this.chequeEspecial = chequeEspecial;
+	}
+	
+	public double getChequeEspecial() {
+		return this.chequeEspecial;
+	}
+	
+	public void setAtiva(boolean ativa) {
+		this.ativa = ativa;
+	}
+	
+	public boolean isAtiva() {
+		return this.ativa;
 	}
 	
 	public void depositar(double valorDeposito) {
@@ -36,10 +72,6 @@ public class Conta {
 	
 	public double getSaldo(){
 		return saldo;
-	}
-	
-	public String getTitular() {
-		return titular;
 	}
 	
 	public void sacar(double valorDoSaque) {
